@@ -1,6 +1,6 @@
 package Log::Any::Adapter::FileHandle;
 BEGIN {
-  $Log::Any::Adapter::FileHandle::VERSION = '0.002';
+  $Log::Any::Adapter::FileHandle::VERSION = '0.001';
 }
 
 =head1 NAME
@@ -9,7 +9,7 @@ Log::Any::Adapter::FileHandle - A basic Log::Any::Adapter to forward messages to
 
 =head1 VERSION
 
-version 0.002
+version 0.001
 
 =head1 SYNOPSIS
 
@@ -72,6 +72,11 @@ use Log::Any::Adapter::Util qw(make_method);
 use Scalar::Util qw(blessed);
 use IO::Handle;
 use base qw(Log::Any::Adapter::Base);
+
+BEGIN {
+  $Log::Any::Adapter::FileHandle::VERSION = '0.001';
+}
+
 
 sub init {
 	my ($self, %attr) = @_;
