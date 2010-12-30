@@ -1,3 +1,7 @@
+0.004     2010-12-30 01:01:32 America/New_York
+
+ - I suck @ dzil, and included my 'archive' in 0.003  removed for this build
+
 0.003     2010-12-30 00:53:12 America/New_York
 
  - Remove the ->can('print') test on setting the file handle, this 
