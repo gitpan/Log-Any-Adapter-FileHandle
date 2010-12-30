@@ -11,7 +11,9 @@ use ExtUtils::MakeMaker 6.31;
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'A basic Log::Any::Adapter to forward messages to a filehandle',
   'AUTHOR' => 'Jason Rodrigues <jasonjayr+oss@gmail.com>',
-  'BUILD_REQUIRES' => {},
+  'BUILD_REQUIRES' => {
+    'IO::String' => '0'
+  },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
   },
@@ -24,7 +26,7 @@ my %WriteMakefileArgs = (
     'Log::Any' => '0.11',
     'Log::Any::Adapter' => '0.02'
   },
-  'VERSION' => '0.004',
+  'VERSION' => '0.005',
   'test' => {
     'TESTS' => 't/*.t'
   }

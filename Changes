@@ -1,3 +1,6 @@
+0.005     2010-12-30 08:16:18 America/New_York
+ - More suckage, I missed declaring IO::String as a testing dependency
+
 0.004     2010-12-30 01:01:32 America/New_York
 
  - I suck @ dzil, and included my 'archive' in 0.003  removed for this build
