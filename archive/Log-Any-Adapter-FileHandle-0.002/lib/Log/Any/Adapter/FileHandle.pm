@@ -1,6 +1,6 @@
 package Log::Any::Adapter::FileHandle;
 BEGIN {
-  $Log::Any::Adapter::FileHandle::VERSION = '0.003';
+  $Log::Any::Adapter::FileHandle::VERSION = '0.002';
 }
 
 =head1 NAME
@@ -9,7 +9,7 @@ Log::Any::Adapter::FileHandle - A basic Log::Any::Adapter to forward messages to
 
 =head1 VERSION
 
-version 0.003
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -89,6 +89,10 @@ sub init {
 	# if no format is set, we default to a reasonable sane default.
 	if(!exists($self->{format})) { 
 		$self->{format} = "[%s] %s\n";
+	}
+	
+	unless(blessed($self->{fh}) && $self->{fh}->can('print')) { 
+		die "Object passed in for fh does not support print: $self->{fh}";
 	}
 }
 

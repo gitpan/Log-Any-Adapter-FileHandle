@@ -3,7 +3,7 @@ NAME
     messages to a filehandle
 
 VERSION
-    version 0.003
+    version 0.002
 
 SYNOPSIS
       use Log::Any qw($log);

@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution Log-Any-Adapter-FileHandle,
-version 0.003:
+version 0.002:
 
   A basic Log::Any::Adapter to forward messages to a filehandle
 
