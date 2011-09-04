@@ -4,31 +4,31 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'A basic Log::Any::Adapter to forward messages to a filehandle',
-  'AUTHOR' => 'Jason Rodrigues <jasonjayr+oss@gmail.com>',
-  'BUILD_REQUIRES' => {
-    'IO::String' => '0'
+  "ABSTRACT" => "A basic Log::Any::Adapter to forward messages to a filehandle",
+  "AUTHOR" => "Jason Rodrigues <jasonjayr+oss\@gmail.com>",
+  "BUILD_REQUIRES" => {
+    "IO::String" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Log-Any-Adapter-FileHandle',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Log::Any::Adapter::FileHandle',
-  'PREREQ_PM' => {
-    'IO::Handle' => '1.22',
-    'Log::Any' => '0.11',
-    'Log::Any::Adapter' => '0.02'
+  "DISTNAME" => "Log-Any-Adapter-FileHandle",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Log::Any::Adapter::FileHandle",
+  "PREREQ_PM" => {
+    "IO::Handle" => "1.22",
+    "Log::Any" => "0.11",
+    "Log::Any::Adapter" => "0.02"
   },
-  'VERSION' => '0.005',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.006",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

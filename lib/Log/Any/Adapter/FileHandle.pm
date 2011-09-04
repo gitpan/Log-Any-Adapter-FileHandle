@@ -1,6 +1,6 @@
 package Log::Any::Adapter::FileHandle;
-BEGIN {
-  $Log::Any::Adapter::FileHandle::VERSION = '0.005';
+{
+  $Log::Any::Adapter::FileHandle::VERSION = '0.006';
 }
 
 =head1 NAME
@@ -9,7 +9,7 @@ Log::Any::Adapter::FileHandle - A basic Log::Any::Adapter to forward messages to
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
@@ -82,7 +82,7 @@ sub init {
 		$self->{fh} = IO::Handle->new_from_fd(fileno(STDERR),'w');
 	}
 
-	if($self->{fh}->can('autoflush') && $self->{no_autoflush}) { 
+	if($self->{fh}->can('autoflush') && !$self->{no_autoflush}) { 
 		$self->{fh}->autoflush(1);
 	}
 	
