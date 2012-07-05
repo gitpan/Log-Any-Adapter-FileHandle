@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     "Log::Any" => "0.11",
     "Log::Any::Adapter" => "0.02"
   },
-  "VERSION" => "0.006",
+  "VERSION" => "0.007",
   "test" => {
     "TESTS" => "t/*.t"
   }

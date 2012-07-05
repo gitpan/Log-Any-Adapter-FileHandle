@@ -1,6 +1,6 @@
 package Log::Any::Adapter::FileHandle;
 {
-  $Log::Any::Adapter::FileHandle::VERSION = '0.006';
+  $Log::Any::Adapter::FileHandle::VERSION = '0.007';
 }
 
 =head1 NAME
@@ -9,13 +9,15 @@ Log::Any::Adapter::FileHandle - A basic Log::Any::Adapter to forward messages to
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SYNOPSIS
 
   use Log::Any qw($log);
+  use Log::Any::Adapter;
 
-  $log->set_adapter('FileHandle');
+  # Send all logs to Log::Any::Adapter::FileHandle
+  Log::Any::Adapter->set('FileHandle');
 
   $log->info("Hello world");
  
