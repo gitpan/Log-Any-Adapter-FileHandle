@@ -1,3 +1,6 @@
+0.008     2013-02-12 01:47:14 America/New_York
+ - Enahncement to optionally strip messages of control or other non-ascii character before printing
+
 0.007     2012-07-05 13:10:06 America/New_York
  - Includes documentation fixes as pointed out by wstlabs in issue #2
 
