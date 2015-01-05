@@ -1,3 +1,7 @@
+0.009     2015-01-05 16:24:48-05:00 America/New_York
+ - fix documention to mention stripping options
+ - Fix unit tests that were incorrectly using ->warn() on the adapter.
+
 0.008     2013-02-12 01:47:14 America/New_York
  - Enahncement to optionally strip messages of control or other non-ascii character before printing
 
