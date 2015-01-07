@@ -1,12 +1,12 @@
 package Log::Any::Adapter::FileHandle;
-$Log::Any::Adapter::FileHandle::VERSION = '0.009';
+$Log::Any::Adapter::FileHandle::VERSION = '0.010';
 =head1 NAME
 
 Log::Any::Adapter::FileHandle - A basic Log::Any::Adapter to forward messages to a filehandle
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 
@@ -105,6 +105,14 @@ sub init {
 
 { 
 	# setup logging methods, that simply print to the given io object.
+	my $escapere;
+	eval q# $escapere = qr/\P{ASCII}|\p{PosixCntrl}/; "test" =~ $escapere #;
+	if($@) {
+		# Older versions of perl don't have PosixCntrl. 
+		# Since I need to support 5.8.8 for my own use, we have to use compatible RegExp
+		$escapere = qr/\P{ASCII}/;
+	}
+
 	foreach my $method ( Log::Any->logging_methods() ) {
 		my $logger = sub {
 			my $self = shift;
@@ -114,7 +122,7 @@ sub init {
 				$message =~ s/\r/\\r/sg;
 			}
 			if($self->{escape} eq 'nonascii') { 
-				$message =~ s/(\P{ASCII}|\p{PosixCntrl})/sprintf("\\x{%x}",ord($1))/eg;
+				$message =~ s/($escapere)/sprintf("\\x{%x}",ord($1))/eg;
 			}
 			if($self->{fh}) { 
 				$self->{fh}->print(sprintf($self->{format}, $method, $message));

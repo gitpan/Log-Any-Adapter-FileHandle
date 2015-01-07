@@ -1,3 +1,6 @@
+0.010     2015-01-07 00:56:13-05:00 America/New_York
+ - \p{PosixCntrl} is not supported on old perls, so test for support and conditionally use it
+
 0.009     2015-01-05 16:24:48-05:00 America/New_York
  - fix documention to mention stripping options
  - Fix unit tests that were incorrectly using ->warn() on the adapter.
